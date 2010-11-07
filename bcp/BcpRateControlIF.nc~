@@ -1,0 +1,5 @@
+interface BcpRateControlIF {
+  command uint16_t getValphaUpper();
+  command uint16_t getSeqenceNo();
+  command uint16_t getValphaValue();  
+}
