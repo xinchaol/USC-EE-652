@@ -1,0 +1,30 @@
+#ifndef BCP_COLLECTION_EXAMPLE_H
+#define BCP_COLLECTION_EXAMPLE_H
+
+enum{
+  UART_QUEUE_SIZE = 20,
+  AM_UARTPACKET   = 0x89
+};
+
+#define PROTO_BCP 1
+//#define PROTO_CTP 1
+
+/**
+ * the UartPacket struct is used for logging purposes.
+ *  The eight fields (3x32, 3x16, 2x8) are indicated
+ *  as valid or invalid per the type field.
+ */
+typedef nx_struct UartPacket {
+  nx_uint32_t         time;
+  nx_uint32_t         field1;
+  nx_uint32_t         field2;
+  nx_uint32_t         field3;
+  nx_uint16_t         field4;
+  nx_uint16_t         field5;
+  nx_uint16_t         field6;
+  nx_uint8_t          field7;
+  nx_uint8_t          field8;
+  nx_uint8_t          type;
+} UartPacket;
+
+#endif /* BCP_COLLECTION_EXAMPLE_H */
